@@ -7,9 +7,12 @@ public class SetterInjectionApp {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        Coach coach = context.getBean("myCricketCoach", CricketCoach.class);
+        CricketCoach coach = context.getBean("myCricketCoach", CricketCoach.class);
         System.out.println(coach.getDailyWorkout());
         System.out.println(coach.getDailyFortune());
+        System.out.println(coach.getEmail());
+        System.out.println(coach.getTeam());
+        System.out.println("\n" + coach);
 
         context.close();
     }
