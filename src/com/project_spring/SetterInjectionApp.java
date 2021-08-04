@@ -13,6 +13,7 @@ public class SetterInjectionApp {
         System.out.println(coach.getEmail());
         System.out.println(coach.getTeam());
         System.out.println("\n" + coach);
+        coach.setEmail("sjs");
 
         context.close();
     }
