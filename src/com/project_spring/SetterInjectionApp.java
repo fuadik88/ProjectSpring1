@@ -4,9 +4,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SetterInjectionApp {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext applicationContext =
+        ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        Coach coach = applicationContext.getBean("myCricketCoach", CricketCoach.class);
+        Coach coach = context.getBean("myCricketCoach", CricketCoach.class);
+        System.out.println(coach.getDailyWorkout());
+        System.out.println(coach.getDailyFortune());
+
+        context.close();
     }
 }
