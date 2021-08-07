@@ -17,6 +17,14 @@ public class TrackCoach implements Coach {
         return "Just do it! " + fortuneService.getFortune();
     }
 
+    private void doStartup(){
+        System.out.println("STARTED UP!");
+    }
+
+    private void doCleanup(){
+        System.out.println("CLEANED UP!");
+    }
+
     @Override
     public String toString() {
         return "TrackCoach:" + fortuneService;

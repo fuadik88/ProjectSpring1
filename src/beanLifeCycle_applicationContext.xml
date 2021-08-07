@@ -8,18 +8,14 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define your beans here -->
-    <context:property-placeholder location="classpath:inject.properties"/>
 
     <bean id="myFortune" class="com.project_spring.HappyFortuneService">
     </bean>
 
-    <bean id="myCoach" class="com.project_spring.TrackCoach">
+    <bean id="myCoach" class="com.project_spring.TrackCoach"
+          init-method="doStartup" destroy-method="doCleanup">
         <constructor-arg ref="myFortune"/>
+
     </bean>
 
-    <bean id="myCricketCoach" class="com.project_spring.CricketCoach">
-        <property name="fortuneService" ref="myFortune"/>
-        <property name="email" value="${add.email}"/>
-        <property name="team" value="${add.team}"/>
-    </bean>
 </beans>
